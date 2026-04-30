@@ -106,8 +106,9 @@
         const [priceSortDir, setPriceSortDir] = useState("");
         const [addFilterKey, setAddFilterKey] = useState("");
         const [selectedFilters, setSelectedFilters] = useState([]);
+        const [hasSearched, setHasSearched] = useState(false);
 
-        useEffect(() => { lucide.createIcons(); }, [category, subCategory, submitting, resultRows, selectedFilters]);
+        useEffect(() => { lucide.createIcons(); }, [category, subCategory, submitting, resultRows, selectedFilters, hasSearched]);
 
         const filterCatalog = useMemo(() => {
           if (!subCategory) return [];
@@ -135,6 +136,7 @@
           setAttributes({});
           setSelectedFilters([]);
           setResultRows([]);
+          setHasSearched(false);
         }
 
         function handleSubCategoryChange(sc) {
@@ -142,6 +144,14 @@
           setAttributes({});
           setSelectedFilters([]);
           setResultRows([]);
+          setHasSearched(false);
+        }
+
+        function handleReset() {
+            setAttributes({});
+            setSelectedFilters([]);
+            setResultRows([]);
+            setHasSearched(false);
         }
 
         function handleFurnitureGroupChange(g) {
@@ -188,6 +198,7 @@
             const json = JSON.parse(text);
             setResultRows(json.rows || []);
             setStatus("Success");
+            setHasSearched(true);
           } catch (err) {
             setStatus("Failed");
             setErrorText(String(err));
@@ -488,7 +499,7 @@
                                     );
                                 })}
                             </div>
-                        ) : (
+                        ) : hasSearched ? (
                             <div className="flex flex-col items-center justify-center h-96 text-center animate__animated animate__fadeIn">
                                 <div className="w-24 h-24 rounded-full bg-slate-100 flex items-center justify-center mb-6">
                                     <i data-lucide="layers-2" className="w-12 h-12 text-slate-300"></i>
@@ -501,6 +512,14 @@
                                 >
                                     Clear all filters
                                 </button>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col items-center justify-center h-96 text-center animate__animated animate__fadeIn">
+                                <div className="w-24 h-24 rounded-full bg-slate-100 flex items-center justify-center mb-6">
+                                    <i data-lucide="filter" className="w-12 h-12 text-slate-300"></i>
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900">Ready to explore {subCategory}</h3>
+                                <p className="text-slate-500 mt-2 max-w-xs">Select your desired filters from the left panel and click Explore Results.</p>
                             </div>
                         )}
                     </div>

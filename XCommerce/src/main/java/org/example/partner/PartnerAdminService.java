@@ -90,4 +90,30 @@ public class PartnerAdminService {
     public void deleteMappingFromFuseki(long id) {
         fusekiClient.deleteGraph("urn:partner:mapping:" + id);
     }
+
+    public List<String> listAllGraphs() {
+        String sparql = "SELECT DISTINCT ?g WHERE { GRAPH ?g { ?s ?p ?o } }";
+        try {
+            String rawJson = fusekiClient.runSelectQuery(sparql);
+            com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+            com.fasterxml.jackson.databind.JsonNode root = mapper.readTree(rawJson);
+            com.fasterxml.jackson.databind.JsonNode bindings = root.path("results").path("bindings");
+            List<String> graphs = new java.util.ArrayList<>();
+            if (bindings.isArray()) {
+                for (com.fasterxml.jackson.databind.JsonNode b : bindings) {
+                    com.fasterxml.jackson.databind.JsonNode gNode = b.path("g").path("value");
+                    if (gNode.isTextual()) {
+                        graphs.add(gNode.asText());
+                    }
+                }
+            }
+            return graphs;
+        } catch (Exception e) {
+            return java.util.Collections.emptyList();
+        }
+    }
+
+    public void deleteAnyGraph(String graphUri) {
+        fusekiClient.deleteGraph(graphUri);
+    }
 }

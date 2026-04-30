@@ -154,6 +154,32 @@
                 <p class="text-slate-500">Enter a valid admin key and refresh to see partner requests.</p>
             </div>
         </div>
+
+        <!-- Raw Graphs Panel -->
+        <div class="premium-card bg-white shadow-xl mt-10">
+            <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                <div>
+                    <h2 class="text-lg font-black text-slate-900">Fuseki Database Graphs</h2>
+                    <p class="text-xs text-slate-500">Direct management of raw named graphs stored in the RDF triplestore.</p>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-slate-50/50 text-left">
+                            <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest">Graph URI</th>
+                            <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest text-right">Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody id="graphs-tbody" class="divide-y divide-slate-100">
+                        <!-- Loaded via JS -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="graphs-empty-state" class="hidden p-10 text-center text-slate-500">
+                No extra named graphs found.
+            </div>
+        </div>
     </main>
 
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -161,8 +187,10 @@
         const keyEl = document.getElementById('key');
         const statusEl = document.getElementById('status');
         const tbody = document.getElementById('tbody');
+        const graphsTbody = document.getElementById('graphs-tbody');
         const refreshBtn = document.getElementById('refresh');
         const emptyState = document.getElementById('empty-state');
+        const graphsEmptyState = document.getElementById('graphs-empty-state');
 
         function setStatus(t, ok) {
             statusEl.textContent = t;
@@ -365,6 +393,46 @@
 
                     tbody.appendChild(tr);
                 }
+
+                // Load Graphs
+                graphsTbody.innerHTML = '';
+                graphsEmptyState.classList.add('hidden');
+                const gData = await api('/admin/graphs?key=' + encodeURIComponent(key));
+                const graphs = Array.isArray(gData.graphs) ? gData.graphs : [];
+                if (graphs.length === 0) graphsEmptyState.classList.remove('hidden');
+
+                for (const g of graphs) {
+                    const gtr = document.createElement('tr');
+                    gtr.className = "hover:bg-slate-50/50 transition-colors";
+                    gtr.innerHTML = `
+                        <td class="px-6 py-4 text-xs font-mono font-bold text-slate-600">${g}</td>
+                        <td class="px-6 py-4 text-right">
+                            <button class="g-del-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-rose-50 text-rose-600 hover:bg-rose-100">
+                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Delete Graph
+                            </button>
+                        </td>
+                    `;
+                    gtr.querySelector('.g-del-btn').addEventListener('click', async (e) => {
+                        const btn = e.currentTarget;
+                        if (!confirm('Delete the raw named graph ' + g + ' from Fuseki? This cannot be undone.')) return;
+                        btn.disabled = true;
+                        btn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i>`;
+                        lucide.createIcons();
+                        try {
+                            const fd = new URLSearchParams();
+                            fd.append('graphUri', g);
+                            await fetch(`/admin/graphs/delete?key=${encodeURIComponent(key)}`, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                                body: fd
+                            });
+                            setStatus('Graph deleted: ' + g, true);
+                            await refresh();
+                        } catch (err) { setStatus(String(err), false); await refresh(); }
+                    });
+                    graphsTbody.appendChild(gtr);
+                }
+
                 lucide.createIcons();
             } catch (e) {
                 setStatus(String(e), false);

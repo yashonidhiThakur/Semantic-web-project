@@ -152,4 +152,24 @@ public class AdminController {
         res.put("deleted", true);
         return ResponseEntity.ok(res);
     }
+
+    @CrossOrigin(origins = {"http://localhost:8080", "http://127.0.0.1:8080"})
+    @GetMapping(value = "/graphs", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Map<String, Object>> listGraphs(@RequestParam("key") String key) {
+        requireAdminKey(key);
+        List<String> graphs = adminService.listAllGraphs();
+        Map<String, Object> res = new HashMap<>();
+        res.put("graphs", graphs);
+        return ResponseEntity.ok(res);
+    }
+
+    @CrossOrigin(origins = {"http://localhost:8080", "http://127.0.0.1:8080"})
+    @PostMapping(value = "/graphs/delete", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Map<String, Object>> deleteAnyGraph(@RequestParam("key") String key, @RequestParam("graphUri") String graphUri) {
+        requireAdminKey(key);
+        adminService.deleteAnyGraph(graphUri);
+        Map<String, Object> res = new HashMap<>();
+        res.put("deleted", true);
+        return ResponseEntity.ok(res);
+    }
 }

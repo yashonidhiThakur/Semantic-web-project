@@ -1,0 +1,731 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/kirti/ontologies/2026/2/untitled-ontology-24/"
+     xml:base="http://www.semanticweb.org/kirti/ontologies/2026/2/untitled-ontology-24/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/kirti/ontologies/2026/2/untitled-ontology-24">
+        <owl:imports rdf:resource="http://dm-project.org/multi-portal-xcommerce"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Sells -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Sells">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#offerSells"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasSeller -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasSeller">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#has_Seller"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasoffer -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasoffer">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#hasOffer"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offerprovidedby -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#offerprovidedby">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#offerBy"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#onProduct -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#onProduct">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#offerOn"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#battery -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#battery">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#BatteryCap"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#batteryLife -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#batteryLife">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#BatteryCap"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#brand -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#brand">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Company"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#camRes -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#camRes">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#CameraType"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#color -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#color">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ColorVariant"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#connectivity -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#connectivity">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#NetworkConnec"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#dimensions -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#dimensions">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Dimension"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#displaySize -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#displaySize">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ScreenSize"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#displayTech -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#displayTech">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ScreenType"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#doorCount -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#doorCount">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#NoOfDoors"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#doorKind -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#doorKind">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#DoorType"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#drawerCount -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#drawerCount">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#NoOfDrawers"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#graphicsMemUnit -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#graphicsMemUnit">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#graphicMemType"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#graphicsMemValue -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#graphicsMemValue">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#graphicMemSize"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasLock -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasLock">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#HasLock"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasLocker -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasLocker">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#BuiltInLocker"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasMirror -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasMirror">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#AttachedMirror"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasWheels -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasWheels">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Wheel_equipped"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasarmRest -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasarmRest">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ArmrestSupport"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hddUnit -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hddUnit">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#HDDType"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hddValue -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hddValue">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#HDDsize"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#height -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#height">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Length_in_cm"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isAssemblyRequired -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#isAssemblyRequired">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#AssemblyType"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isConvertible -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#isConvertible">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#isMultifunctional"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isOpen -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#isOpen">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#OpenOrClosed"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isRotating -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#isRotating">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#IsRotatable"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#legCount -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#legCount">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#No_of_legs"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#madeIn -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#madeIn">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ManufacturedIN"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#material -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#material">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Materials"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#mountType -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#mountType">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#WallMounted"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offerEndDate -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#offerEndDate">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#End"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offerStartDate -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#offerStartDate">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Start"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offeredDiscount -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#offeredDiscount">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Discount"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#os -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#os">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#OS_Version"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#platform -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#platform">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Platform"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#price -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#price">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ItemCost"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#procSpeedUnit -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#procSpeedUnit">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ProcessorUnit"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#procSpeedValue -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#procSpeedValue">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ProcessorSize"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#productID -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#productID">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ItemNumber"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#productName -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#productName">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ItemName"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#productRatings -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#productRatings">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ItemRating"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#ramUnit -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#ramUnit">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#RAMType"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#ramValue -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#ramValue">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#RAMSize"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#rating -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#rating">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ItemRating"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#resolution -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#resolution">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ScreenResolution"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#seaters -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#seaters">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#no_of_seats"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerCity -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerCity">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Store_City"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerContact -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerContact">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#StorePhoneNo"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerName -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerName">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#VendorName"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerRating -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerRating">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Vendors_Rating"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#shape -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#shape">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ProductShape"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#shelfCount -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#shelfCount">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#NoOfShelves"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#simCardSlotCnt -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#simCardSlotCnt">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#SIMNum"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#storageUnit -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#storageUnit">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#InternalStorage"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#storageValue -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#storageValue">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#InternalStorageSize"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#tableTopThickness -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#tableTopThickness">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#TableThickness_in_mm"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#topMaterial -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#topMaterial">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#TopMaterial"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#upholsteryType -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#upholsteryType">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#FabricType"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#volume -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#volume">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Volume"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#warranty -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#warranty">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#ItemGuarantee"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#weightCap -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#weightCap">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#LoadCapacity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#width -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#width">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Width_in_cm"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#yom -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#yom">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#MfgYear"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Chair -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Chair">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Chairs"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Dining -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Dining">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Dining/Coffee"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Electronics -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Electronics">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Electronics"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Furniture -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Furniture">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Home/Living"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Laptop -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Laptop">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Laptops"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Mobile -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Mobile">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Mobiles"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Offer -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Offer">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Deal"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Product -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Product">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Items"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Seating -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Seating">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#SeatingUnit"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Seller -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Seller">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Vendor"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Shelf -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Shelf">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Shelves"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Sofa -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Sofa">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Sofas"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Storage -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Storage">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#StorageUnit"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Study -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Study">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Desks"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Table -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Table">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#TableUnit"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Television -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Television">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Televisions"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Wardrobe -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Wardrobe">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Cupboards"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

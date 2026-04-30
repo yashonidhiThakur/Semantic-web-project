@@ -1,0 +1,6 @@
+FROM alpine:latest
+RUN apk add --no-cache curl
+COPY *.rdf /rdf-data/
+COPY load-rdf.sh /load-rdf.sh
+RUN chmod +x /load-rdf.sh
+ENTRYPOINT ["/bin/sh", "/load-rdf.sh"]

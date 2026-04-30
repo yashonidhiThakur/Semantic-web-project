@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partner Onboarding | XCommerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ff3f6c',
+                        secondary: '#6366f1',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/app.css?v=2" />
+</head>
+<body class="bg-[#f8fafc] dark:bg-[#0f172a]">
+    <header class="topbar sticky top-0 z-50">
+        <div class="topbar-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="/" class="brand">
+                <div class="logo-icon">
+                    <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">XCommerce</span>
+                    <span class="brand-tag">Partner Portal</span>
+                </div>
+            </a>
+            <div class="flex items-center space-x-4">
+                <a href="/admin-dashboard.html" class="hidden sm:inline-flex items-center text-sm font-medium text-slate-500 hover:text-primary transition-colors">
+                    Admin Dashboard
+                </a>
+                <a href="/product-search.html" class="btn-primary py-2 px-4 text-xs sm:text-sm">
+                    <i data-lucide="search" class="w-4 h-4"></i>
+                    Marketplace
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page max-w-4xl mx-auto py-12 px-4 sm:px-6">
+        <div class="premium-card overflow-hidden">
+            <div class="p-8 border-b border-slate-100 dark:border-slate-800 bg-gradient-to-r from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
+                <h1 class="text-2xl font-black text-slate-900 dark:text-white">Submit your RDF</h1>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-400 max-w-lg">
+                    Upload your catalog in RDF format for review. Once approved, your products will be indexed and available for discovery.
+                </p>
+            </div>
+
+            <div class="p-8">
+                <form id="f" class="space-y-8">
+                    <div class="input-group">
+                        <label class="label">Partner Name</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                <i data-lucide="building-2" class="w-5 h-5"></i>
+                            </div>
+                            <input id="partnerName" type="text" class="input pl-10" placeholder="e.g. Amazon, Myntra, Flipkart" required />
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="label">RDF Data File</label>
+                        <div class="mt-2">
+                            <label for="rdf" class="relative group cursor-pointer">
+                                <div class="border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-2xl p-12 text-center group-hover:border-primary transition-all duration-300 bg-slate-50/50 dark:bg-slate-900/50">
+                                    <div class="mx-auto w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                        <i data-lucide="file-up" class="w-8 h-8 text-slate-400 group-hover:text-primary"></i>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <p class="text-base font-bold text-slate-900 dark:text-white" id="rdfName">No file selected</p>
+                                        <p class="text-xs text-slate-500">Supports .rdf, .ttl, .nt, .n3, .owl</p>
+                                    </div>
+                                </div>
+                                <input id="rdf" type="file" class="hidden" accept=".rdf,.ttl,.nt,.n3,.owl,application/rdf+xml,text/turtle" required />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-6">
+                        <div id="status" class="text-sm font-medium"></div>
+                        <div class="flex gap-4">
+                            <a href="/product-search.html">
+                                <button type="button" class="btn-secondary">Cancel</button>
+                            </a>
+                            <button id="btn" type="submit" class="btn-primary px-10">
+                                <i data-lucide="upload-cloud" class="w-5 h-5"></i>
+                                Upload Catalog
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="premium-card p-6 border-l-4 border-l-secondary">
+                <div class="flex gap-4">
+                    <div class="p-3 rounded-xl bg-secondary/10 text-secondary">
+                        <i data-lucide="info" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Review Process</h4>
+                        <p class="text-sm text-slate-500 mt-1">Our team will validate your RDF structure and map it to our internal ontology.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="premium-card p-6 border-l-4 border-l-primary">
+                <div class="flex gap-4">
+                    <div class="p-3 rounded-xl bg-primary/10 text-primary">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Estimated Time</h4>
+                        <p class="text-sm text-slate-500 mt-1">Approval usually takes 1-2 business days depending on data complexity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+
+        const form = document.getElementById('f');
+        const btn = document.getElementById('btn');
+        const status = document.getElementById('status');
+        const rdfInput = document.getElementById('rdf');
+        const rdfName = document.getElementById('rdfName');
+
+        function setStatus(text, ok) {
+            status.textContent = text;
+            status.className = 'text-sm font-medium ' + (ok ? 'text-emerald-500' : 'text-rose-500');
+        }
+
+        rdfInput.addEventListener('change', () => {
+            const f = rdfInput.files && rdfInput.files[0];
+            rdfName.textContent = f ? f.name : 'No file selected';
+            if(f) {
+                rdfName.classList.add('text-primary');
+            }
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Uploading...';
+            lucide.createIcons();
+            status.textContent = '';
+
+            try {
+                const partnerName = document.getElementById('partnerName').value;
+                const file = document.getElementById('rdf').files[0];
+                const fd = new FormData();
+                fd.append('partnerName', partnerName);
+                fd.append('rdf', file);
+
+                const res = await fetch('/partners/upload', { method: 'POST', body: fd });
+                const txt = await res.text();
+                if (!res.ok) {
+                    setStatus(txt || ('Upload failed: ' + res.status), false);
+                    return;
+                }
+                setStatus('Uploaded successfully! Redirecting...', true);
+                setTimeout(() => {
+                    window.location.href = '/product-search.html';
+                }, 2000);
+            } catch (err) {
+                setStatus(String(err), false);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i data-lucide="upload-cloud" class="w-5 h-5"></i> Upload Catalog';
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>

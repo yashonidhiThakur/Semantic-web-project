@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Product Search | XCommerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ff3f6c',
+                        secondary: '#6366f1',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/app.css?v=3" />
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+        
+        .skeleton {
+            background: linear-gradient(90deg, #f1f5f9 25%, #f8fafc 50%, #f1f5f9 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-[#f8fafc] dark:bg-[#0f172a] min-h-screen flex flex-col overflow-auto">
+    <div id="root" class="h-full flex flex-col"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script type="text/babel">
+      const { useEffect, useMemo, useState, useRef } = React;
+
+      function ProductSearchForm() {
+        // --- LOGIC PRESERVED FROM ORIGINAL ---
+        const categories = useMemo(() => ["Electronic Devices", "Furniture"], []);
+        const [category, setCategory] = useState("");
+        const electronicSubCategories = useMemo(() => ["Laptop", "Mobile", "TV"], []);
+        const furnitureGroups = useMemo(() => ["Seating", "Table", "Storage"], []);
+        const furnitureLeavesByGroup = useMemo(() => ({
+          Seating: ["Chair", "Sofa"],
+          Table: ["Dining", "Study"],
+          Storage: ["Shelf", "Wardrobe"],
+        }), []);
+
+        const filterOptions = useMemo(() => ({
+          Laptop: {
+            Brand: ["Dell", "HP", "Lenovo", "Apple", "Asus", "Acer", "MSI"],
+            Color: ["Black", "Silver", "Gray", "White", "Blue"],
+            HDDValue: ["256", "512", "1024", "2048"],
+            HDDUnit: ["GB", "TB"],
+            RAM: ["8", "16", "32", "64"],
+            OS: ["Windows", "macOS", "Linux"],
+            DisplayTechnology: ["OLED", "IPS", "Mini-LED", "Retina"],
+            DisplaySize: ["13.3", "13.4", "14.0", "15.6", "16.0"],
+            ProcessorSpeed: ["2", "3", "4", "5"],
+            ManufacturingYear: ["2023", "2024", "2025", "2026"],
+          },
+          Mobile: {
+            Brand: ["Apple", "Samsung", "OnePlus", "Google", "Xiaomi", "Vivo"],
+            Color: ["Black", "White", "Blue", "Green", "Purple"],
+            StorageValue: ["128", "256", "512", "1024"],
+            StorageUnit: ["GB"],
+            OS: ["Android", "iOS"],
+            DisplayTechnology: ["LTPO AMOLED", "Super Retina XDR", "OLED"],
+            DisplaySize: ["6.1", "6.3", "6.7", "6.8"],
+            BatteryLife: ["24", "36", "48", "52"],
+            Pixels: ["48MP", "50MP", "108MP", "200MP"],
+            SIMSlots: ["1", "2"],
+            ManufacturingYear: ["2023", "2024", "2025", "2026"],
+          },
+          TV: {
+            Brand: ["Samsung", "Sony", "LG", "TCL", "Hisense", "OnePlus"],
+            DisplayTechnology: ["OLED", "QLED", "Mini-LED", "LED", "Neo QLED"],
+            DisplaySize: ["43", "50", "55", "65", "75", "85"],
+            ScreenResolution: ["3840 x 2160 (4K)", "7680 x 4320 (8K)"],
+            OS: ["Android TV", "Tizen", "webOS", "Google TV"],
+            ManufacturingYear: ["2023", "2024", "2025", "2026"],
+          },
+        }), []);
+
+        const [dynamicOptions, setDynamicOptions] = useState(null);
+        const [subCategory, setSubCategory] = useState("");
+        const [furnitureGroup, setFurnitureGroup] = useState("");
+        const [furnitureLeafDraft, setFurnitureLeafDraft] = useState("");
+        const [attributes, setAttributes] = useState({});
+        const [submitting, setSubmitting] = useState(false);
+        const [status, setStatus] = useState("");
+        const [resultRows, setResultRows] = useState([]);
+        const [errorText, setErrorText] = useState("");
+        const [priceSortDir, setPriceSortDir] = useState("");
+        const [addFilterKey, setAddFilterKey] = useState("");
+        const [selectedFilters, setSelectedFilters] = useState([]);
+
+        useEffect(() => { lucide.createIcons(); }, [category, subCategory, submitting, resultRows, selectedFilters]);
+
+        const filterCatalog = useMemo(() => {
+          if (!subCategory) return [];
+          if (category === "Furniture") {
+            const common = [
+              { id: "Brand", label: "Brand", icon: "tag" },
+              { id: "Color", label: "Color", icon: "palette" },
+              { id: "Material", label: "Material", icon: "box" },
+              { id: "Dimensions", label: "Dimensions", icon: "maximize" },
+            ];
+            if (subCategory === "Chair") return [...common, { id: "Seaters", label: "Seaters" }, { id: "HasArmRest", label: "Arm Rest" }];
+            if (subCategory === "Sofa") return [...common, { id: "SeatingCapacity", label: "Capacity" }, { id: "Shape", label: "Shape" }];
+            return common;
+          }
+          const common = [{ id: "Brand", label: "Brand", icon: "award" }, { id: "Color", label: "Color", icon: "palette" }];
+          if (subCategory === "Laptop") return [...common, { id: "Storage", label: "Storage", icon: "hard-drive" }, { id: "RAM", label: "RAM", icon: "cpu" }, { id: "OS", label: "OS", icon: "monitor" }];
+          if (subCategory === "Mobile") return [...common, { id: "Storage", label: "Storage", icon: "hard-drive" }, { id: "Pixels", label: "Camera", icon: "camera" }];
+          if (subCategory === "TV") return [...common, { id: "DisplaySize", label: "Size", icon: "tv" }, { id: "ScreenResolution", label: "Resolution", icon: "layout" }];
+          return common;
+        }, [category, subCategory]);
+
+        function handleCategoryChange(e) {
+          setCategory(e.target.value);
+          setSubCategory("");
+          setAttributes({});
+          setSelectedFilters([]);
+          setResultRows([]);
+        }
+
+        function handleSubCategoryChange(sc) {
+          setSubCategory(sc);
+          setAttributes({});
+          setSelectedFilters([]);
+          setResultRows([]);
+        }
+
+        function handleFurnitureGroupChange(g) {
+          setFurnitureGroup(g);
+          setSubCategory("");
+        }
+
+        function addSelectedFilter(filterId) {
+          if (!filterId || selectedFilters.includes(filterId)) return;
+          setSelectedFilters([...selectedFilters, filterId]);
+          setAddFilterKey("");
+        }
+
+        function removeSelectedFilter(filterId) {
+          setSelectedFilters(selectedFilters.filter(f => f !== filterId));
+          const newAttrs = {...attributes};
+          delete newAttrs[filterId];
+          setAttributes(newAttrs);
+        }
+
+        const payload = useMemo(() => {
+          const base = { category: category || null, subCategory: subCategory || null, attributes: attributes || {} };
+          const nextAttrs = { ...base.attributes };
+          // Minimal payload transformation preserved
+          if (subCategory === "Laptop" && nextAttrs.RAMValue && nextAttrs.RAMUnit) {
+            nextAttrs.RAM = nextAttrs.RAMValue + nextAttrs.RAMUnit;
+          }
+          return { ...base, attributes: nextAttrs };
+        }, [category, subCategory, attributes]);
+
+        async function handleSubmit(e) {
+          if (e) e.preventDefault();
+          setSubmitting(true);
+          setStatus("");
+          setErrorText("");
+          try {
+            const res = await fetch("http://localhost:8080/products/search", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+            const text = await res.text();
+            if (!res.ok) throw new Error(text || `HTTP ${res.status}`);
+            const json = JSON.parse(text);
+            setResultRows(json.rows || []);
+            setStatus("Success");
+          } catch (err) {
+            setStatus("Failed");
+            setErrorText(String(err));
+          } finally {
+            setSubmitting(false);
+          }
+        }
+
+        const sortedRows = useMemo(() => {
+          if (!priceSortDir) return resultRows;
+          return [...resultRows].sort((a,b) => {
+            const ap = Number(a.price), bp = Number(b.price);
+            return priceSortDir === "asc" ? ap - bp : bp - ap;
+          });
+        }, [resultRows, priceSortDir]);
+
+        const formatPrice = (v) => {
+          if (v === null || v === undefined) return "—";
+          return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(v);
+        };
+
+        // --- RENDER HELPERS ---
+        const renderHeader = () => (
+          <header class="topbar">
+            <div class="topbar-inner">
+                <a href="/" class="brand">
+                    <div class="logo-icon"><i data-lucide="zap" class="w-6 h-6 text-white"></i></div>
+                    <div class="brand-text">
+                        <span class="brand-name">XCommerce</span>
+                        <span class="brand-tag">Smart Discovery</span>
+                    </div>
+                </a>
+                <div class="flex items-center gap-4">
+                    <a href="/admin-dashboard.html" class="text-sm font-medium text-slate-500 hover:text-primary transition-colors">Admin</a>
+                    <a href="/partner-onboarding.html" class="text-sm font-medium text-slate-500 hover:text-primary transition-colors">Partners</a>
+                </div>
+            </div>
+          </header>
+        );
+
+        if (!category) {
+          return (
+            <div className="flex-1 flex flex-col">
+              {renderHeader()}
+              <div className="flex-1 flex items-center justify-center p-6 bg-slate-50">
+                <div className="premium-card w-full max-w-xl p-10 text-center animate__animated animate__zoomIn">
+                    <div className="w-20 h-20 rounded-3xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-8">
+                        <i data-lucide="search" className="w-10 h-10"></i>
+                    </div>
+                    <h1 className="text-2xl font-black text-slate-900 mb-2">Start your search</h1>
+                    <p className="text-sm text-slate-500 mb-8 leading-relaxed max-w-sm mx-auto">Select a category to explore thousands of products from our premium partner network.</p>
+                    
+                    <div className="space-y-6">
+                        <div className="text-left">
+                            <label className="label uppercase tracking-widest text-[9px] mb-1.5 block opacity-60">Choose Category</label>
+                            <select 
+                                className="input h-11 font-bold"
+                                value={category} 
+                                onChange={handleCategoryChange}
+                            >
+                                <option value="">Select category...</option>
+                                {categories.map(c => <option key={c} value={c}>{c}</option>)}
+                            </select>
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3">
+                                <i data-lucide="shield-check" className="w-5 h-5 text-emerald-500"></i>
+                                <span className="text-xs font-bold text-slate-600">Verified Partners</span>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3">
+                                <i data-lucide="zap" className="w-5 h-5 text-amber-500"></i>
+                                <span className="text-xs font-bold text-slate-600">Real-time Pricing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        return (
+          <div className="flex-1 flex flex-col">
+            {renderHeader()}
+            
+            <div className="flex-1 flex overflow-hidden">
+                {/* Sidebar Filters */}
+                <aside className="w-80 border-r border-slate-200 bg-white flex flex-col">
+                    <div className="p-5 border-b border-slate-100 flex items-center justify-between">
+                        <h2 className="font-black text-slate-900 flex items-center gap-2">
+                            <i data-lucide="sliders-horizontal" className="w-4 h-4 text-primary"></i>
+                            Filters
+                        </h2>
+                        <button onClick={() => setCategory("")} className="text-[10px] font-bold text-slate-400 hover:text-primary uppercase tracking-wider">Change Category</button>
+                    </div>
+                    
+                    <div className="flex-1 overflow-y-auto p-5 space-y-8 custom-scrollbar">
+                        {/* Subcategory Picker */}
+                        <div className="space-y-3">
+                            <label className="label uppercase tracking-widest text-[10px]">Product Type</label>
+                            <div className="grid grid-cols-1 gap-2">
+                                {category === "Electronic Devices" ? electronicSubCategories.map(sc => (
+                                    <button 
+                                        key={sc}
+                                        onClick={() => handleSubCategoryChange(sc)}
+                                        className={`flex items-center justify-between p-3 rounded-xl border text-sm font-bold transition-all ${subCategory === sc ? 'border-primary bg-primary/5 text-primary' : 'border-slate-100 hover:border-slate-200 text-slate-600'}`}
+                                    >
+                                        {sc}
+                                        {subCategory === sc && <i data-lucide="check" className="w-4 h-4"></i>}
+                                    </button>
+                                )) : furnitureGroups.map(g => (
+                                    <div key={g} className="space-y-2">
+                                        <button 
+                                            onClick={() => handleFurnitureGroupChange(g)}
+                                            className={`w-full flex items-center justify-between p-3 rounded-xl border text-sm font-bold transition-all ${furnitureGroup === g ? 'border-secondary bg-secondary/5 text-secondary' : 'border-slate-100 hover:border-slate-200 text-slate-600'}`}
+                                        >
+                                            {g}
+                                            {furnitureGroup === g && <i data-lucide="chevron-down" className="w-4 h-4"></i>}
+                                        </button>
+                                        {furnitureGroup === g && (
+                                            <div className="pl-4 space-y-1">
+                                                {furnitureLeavesByGroup[g].map(leaf => (
+                                                    <button 
+                                                        key={leaf}
+                                                        onClick={() => handleSubCategoryChange(leaf)}
+                                                        className={`w-full text-left p-2 text-xs font-bold rounded-lg transition-all ${subCategory === leaf ? 'text-secondary bg-secondary/5' : 'text-slate-400 hover:text-slate-600'}`}
+                                                    >
+                                                        • {leaf}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {subCategory && (
+                            <div className="space-y-6 pt-4 border-t border-slate-50">
+                                {/* Add Filter Dropdown */}
+                                <div className="space-y-3">
+                                    <label className="label uppercase tracking-widest text-[10px]">Refine By</label>
+                                    <div className="flex gap-2">
+                                        <select 
+                                            className="input h-10 text-xs py-0"
+                                            value={addFilterKey}
+                                            onChange={(e) => setAddFilterKey(e.target.value)}
+                                        >
+                                            <option value="">Select aspect...</option>
+                                            {filterCatalog.filter(f => !selectedFilters.includes(f.id)).map(f => (
+                                                <option key={f.id} value={f.id}>{f.label}</option>
+                                            ))}
+                                        </select>
+                                        <button 
+                                            onClick={() => addSelectedFilter(addFilterKey)}
+                                            disabled={!addFilterKey}
+                                            className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed"
+                                        >
+                                            <i data-lucide="plus" className="w-5 h-5"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* Active Filters */}
+                                <div className="space-y-4">
+                                    {selectedFilters.map(filterId => {
+                                        const fDef = filterCatalog.find(f => f.id === filterId);
+                                        return (
+                                            <div key={filterId} className="premium-card p-4 space-y-2 relative group">
+                                                <button 
+                                                    onClick={() => removeSelectedFilter(filterId)}
+                                                    className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-rose-500 hover:text-white"
+                                                >
+                                                    <i data-lucide="x" className="w-3 h-3"></i>
+                                                </button>
+                                                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                                                    <i data-lucide={fDef?.icon || 'circle'} className="w-3 h-3"></i>
+                                                    {fDef?.label || filterId}
+                                                </label>
+                                                
+                                                {filterId === "RAM" ? (
+                                                    <div className="flex gap-2">
+                                                        <select className="input h-9 py-0 text-xs font-bold" value={attributes.RAMValue || ""} onChange={e => setAttributes({...attributes, RAMValue: e.target.value})}>
+                                                            <option value="">Val</option>
+                                                            {(filterOptions[subCategory]?.RAM || ["8","16","32"]).map(v => <option key={v} value={v}>{v}</option>)}
+                                                        </select>
+                                                        <select className="input h-9 py-0 text-xs font-bold w-20" value={attributes.RAMUnit || ""} onChange={e => setAttributes({...attributes, RAMUnit: e.target.value})}>
+                                                            <option value="">Unit</option>
+                                                            <option value="GB">GB</option>
+                                                        </select>
+                                                    </div>
+                                                ) : (
+                                                    <select 
+                                                        className="input h-9 py-0 text-xs font-bold"
+                                                        value={attributes[filterId] || ""}
+                                                        onChange={(e) => setAttributes({...attributes, [filterId]: e.target.value})}
+                                                    >
+                                                        <option value="">Any {fDef?.label}</option>
+                                                        {(filterOptions[subCategory]?.[filterId] || []).map(o => <option key={o} value={o}>{o}</option>)}
+                                                    </select>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    <div className="p-5 border-t border-slate-100 bg-slate-50/50">
+                        <button 
+                            onClick={handleSubmit}
+                            disabled={!subCategory || submitting}
+                            className="btn-primary w-full h-12"
+                        >
+                            {submitting ? <i data-lucide="loader-2" className="w-5 h-5 animate-spin"></i> : <i data-lucide="search" className="w-5 h-5"></i>}
+                            {submitting ? 'Searching...' : 'Explore Results'}
+                        </button>
+                    </div>
+                </aside>
+
+                {/* Main Content Area */}
+                <main className="flex-1 overflow-y-auto bg-slate-50 relative custom-scrollbar">
+                    {/* Sticky Sub-Header */}
+                    <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md px-8 py-4 border-b border-slate-200 flex items-center justify-between">
+                        <div>
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{category}</span>
+                            <h3 className="text-xl font-black text-slate-900">{subCategory || 'Please select a type'}</h3>
+                        </div>
+                        <div className="flex items-center gap-4">
+                            <span className="text-xs font-bold text-slate-400">{resultRows.length} Matches</span>
+                            <div className="h-6 w-px bg-slate-200"></div>
+                            <button 
+                                onClick={() => setPriceSortDir(priceSortDir === 'asc' ? 'desc' : 'asc')}
+                                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${priceSortDir ? 'bg-primary text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+                            >
+                                <i data-lucide={priceSortDir === 'desc' ? 'arrow-down-narrow-wide' : 'arrow-up-wide-narrow'} className="w-4 h-4"></i>
+                                Price: {priceSortDir === 'asc' ? 'Low to High' : priceSortDir === 'desc' ? 'High to Low' : 'Sort'}
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="p-8">
+                        {submitting ? (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {[1,2,3,4,5,6].map(i => (
+                                    <div key={i} className="premium-card h-48 p-6 flex flex-col justify-between">
+                                        <div className="space-y-3">
+                                            <div className="h-6 w-3/4 skeleton rounded-lg"></div>
+                                            <div className="h-4 w-1/2 skeleton rounded-md opacity-50"></div>
+                                        </div>
+                                        <div className="flex justify-between items-end">
+                                            <div className="h-10 w-10 skeleton rounded-full"></div>
+                                            <div className="h-8 w-1/3 skeleton rounded-lg"></div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        ) : resultRows.length > 0 ? (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {sortedRows.map((row, idx) => {
+                                    const bestPrice = Math.min(...resultRows.map(r => Number(r.price)));
+                                    const isBestDeal = Number(row.price) === bestPrice;
+                                    const platformLCase = (row.platform || "").toLowerCase();
+                                    
+                                    return (
+                                        <div key={idx} className={`premium-card p-6 flex flex-col justify-between group transition-all duration-300 ${isBestDeal ? 'ring-2 ring-primary ring-offset-4 ring-offset-slate-50' : ''}`}>
+                                            <div className="space-y-2">
+                                                <div className="flex items-start justify-between gap-4">
+                                                    <h4 className="font-bold text-slate-900 group-hover:text-primary transition-colors leading-tight line-clamp-2">{row.productName}</h4>
+                                                    {isBestDeal && (
+                                                        <span className="shrink-0 px-2 py-1 rounded bg-rose-500 text-white text-[8px] font-black uppercase tracking-tighter">Best Deal</span>
+                                                    )}
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <div className={`w-2 h-2 rounded-full ${isBestDeal ? 'bg-rose-500 animate-pulse' : 'bg-slate-300'}`}></div>
+                                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{row.platform}</span>
+                                                </div>
+                                            </div>
+
+                                            <div className="mt-8 flex items-end justify-between">
+                                                <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+                                                    {platformLCase.includes('amazon') && <img src="Logo/Amazon.png" className="w-8 h-8 object-contain" />}
+                                                    {platformLCase.includes('flipkart') && <img src="Logo/Flipkart.png" className="w-8 h-8 object-contain" />}
+                                                    {platformLCase.includes('myntra') && <img src="Logo/Myntra.png" className="w-8 h-8 object-contain" />}
+                                                    {!['amazon','flipkart','myntra'].some(p => platformLCase.includes(p)) && <i data-lucide="shopping-cart" className="w-6 h-6 text-slate-400"></i>}
+                                                </div>
+                                                <div className="text-right">
+                                                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-tighter line-through opacity-50">
+                                                        {row.basePrice ? formatPrice(row.basePrice) : ''}
+                                                    </div>
+                                                    <div className={`text-2xl font-black ${isBestDeal ? 'text-primary' : 'text-slate-900'}`}>
+                                                        {formatPrice(row.price)}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        ) : (
+                            <div className="flex flex-col items-center justify-center h-96 text-center animate__animated animate__fadeIn">
+                                <div className="w-24 h-24 rounded-full bg-slate-100 flex items-center justify-center mb-6">
+                                    <i data-lucide="layers-2" className="w-12 h-12 text-slate-300"></i>
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900">No products found</h3>
+                                <p className="text-slate-500 mt-2 max-w-xs">Adjust your filters or try a different category to see available offers.</p>
+                                <button 
+                                    onClick={() => handleReset()}
+                                    className="mt-6 text-sm font-bold text-primary hover:underline transition-all"
+                                >
+                                    Clear all filters
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                </main>
+            </div>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<ProductSearchForm />);
+    </script>
+</body>
+</html>

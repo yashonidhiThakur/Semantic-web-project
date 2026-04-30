@@ -1,0 +1,1067 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dm-project.org/multi-portal-xcommerce/"
+     xml:base="http://dm-project.org/multi-portal-xcommerce/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://dm-project.org/multi-portal-xcommerce"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Sells -->
+
+    <owl:ObjectProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#Sells">
+        <owl:inverseOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#hasSeller"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seller"/>
+        <rdfs:range rdf:resource="http://dm-project.org/multi-portal-xcommerce#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasSeller -->
+
+    <owl:ObjectProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#hasSeller">
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Product"/>
+        <rdfs:range rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seller"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasoffer -->
+
+    <owl:ObjectProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#hasoffer">
+        <owl:inverseOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#offerprovidedby"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seller"/>
+        <rdfs:range rdf:resource="http://dm-project.org/multi-portal-xcommerce#Offer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offerprovidedby -->
+
+    <owl:ObjectProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#offerprovidedby">
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Offer"/>
+        <rdfs:range rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seller"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#onProduct -->
+
+    <owl:ObjectProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#onProduct">
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Offer"/>
+        <rdfs:range rdf:resource="http://dm-project.org/multi-portal-xcommerce#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#CPUSupplier -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#CPUSupplier">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#LaptopProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Laptop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Chair -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#Chair">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Dining -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#Dining">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Table"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#FurnitureProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#FurnitureProperties">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#LaptopProp -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#LaptopProp">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#MobileProp -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#MobileProp">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#OfferProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#OfferProperties">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Product"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Seating -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#Seating">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#FurnitureProperties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#SellerProperties -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#SellerProperties">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Shelf -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#Shelf">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Sofa -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#Sofa">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Sofa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Storage -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#Storage">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#FurnitureProperties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Study -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#Study">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Table"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Table -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#Table">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#FurnitureProperties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#TelevisionProp -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#TelevisionProp">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Wardrobe -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#Wardrobe">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#battery -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#battery">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#MobileProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Mobile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#batteryLife -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#batteryLife">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#LaptopProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Laptop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#brand -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#brand">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#camRes -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#camRes">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#MobileProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Mobile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#cntlMethod -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#cntlMethod">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#TelevisionProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Television"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#color -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#color">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#FurnitureProperties"/>
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#LaptopProp"/>
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#MobileProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Laptop"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Mobile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#connectivity -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#connectivity">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Electronics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#dimensions -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#dimensions">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#FurnitureProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Furniture"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#displaySize -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#displaySize">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Electronics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#displayTech -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#displayTech">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Electronics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#doorCount -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#doorCount">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#doorKind -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#doorKind">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Wardrobe"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Wardrobe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#drawerCount -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#drawerCount">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Study"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Study"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#graphicsMemUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#graphicsMemUnit">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#LaptopProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Laptop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#graphicsMemValue -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#graphicsMemValue">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#LaptopProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Laptop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasAdjustableHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#hasAdjustableHeight">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Chair"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Chair"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasLock -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#hasLock">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasLocker -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#hasLocker">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Wardrobe"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Wardrobe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasMirror -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#hasMirror">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Wardrobe"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Wardrobe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasStorage -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#hasStorage">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Study"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Study"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasWheels -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#hasWheels">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasarmRest -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#hasarmRest">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hddUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#hddUnit">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#LaptopProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Laptop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hddValue -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#hddValue">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#LaptopProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Laptop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#height -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#height">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#TelevisionProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Television"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isAssemblyRequired -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#isAssemblyRequired">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#FurnitureProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Furniture"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isConvertible -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#isConvertible">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Sofa"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Sofa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isOpen -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#isOpen">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Shelf"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Shelf"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isRecliner -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#isRecliner">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isRotating -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#isRotating">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Chair"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Chair"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#legCount -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#legCount">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Chair"/>
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Table"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Chair"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Table"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#madeIn -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#madeIn">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Electronics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#material -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#material">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#FurnitureProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Furniture"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#mountType -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#mountType">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Shelf"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Shelf"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offerEndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#offerEndDate">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#OfferProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Offer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offerStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#offerStartDate">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#OfferProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Offer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offeredDiscount -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#offeredDiscount">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#OfferProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Offer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#os -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#os">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Electronics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#platform -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#platform">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#price -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#price">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#procSpeedUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#procSpeedUnit">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#LaptopProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Laptop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#procSpeedValue -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#procSpeedValue">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#LaptopProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Laptop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#productID -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#productID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#productName -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#productName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#productRatings -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#productRatings">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#ramUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#ramUnit">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#LaptopProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Laptop"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Mobile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#ramValue -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#ramValue">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#LaptopProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Laptop"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Mobile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#rating -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#rating">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Electronics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#resolution -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#resolution">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#TelevisionProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Television"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#seaters -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#seaters">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#FurnitureProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Furniture"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#seatingCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#seatingCapacity">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Sofa"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Sofa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerCity -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerCity">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#SellerProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seller"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerContact -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerContact">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#SellerProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seller"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerGST -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerGST">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#SellerProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seller"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerName -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerName">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#SellerProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seller"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerRating -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerRating">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#SellerProperties"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seller"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#shape -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#shape">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Sofa"/>
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Table"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Sofa"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Table"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#shelfCount -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#shelfCount">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#simCardSlotCnt -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#simCardSlotCnt">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#MobileProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Mobile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#storageUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#storageUnit">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#MobileProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Mobile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#storageValue -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#storageValue">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#MobileProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Mobile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#tableTopThickness -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#tableTopThickness">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Dining"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Dining"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#topMaterial -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#topMaterial">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Dining"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Dining"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#upholsteryType -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#upholsteryType">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#volume -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#volume">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#warranty -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#warranty">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Electronics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#weightCap -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#weightCap">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Table"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Table"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#width -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#width">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#TelevisionProp"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Television"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#yom -->
+
+    <owl:DatatypeProperty rdf:about="http://dm-project.org/multi-portal-xcommerce#yom">
+        <rdfs:subPropertyOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#ElectronicsProperites"/>
+        <rdfs:domain rdf:resource="http://dm-project.org/multi-portal-xcommerce#Electronics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Chair -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Chair">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Dining -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Dining">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Table"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Electronics -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Electronics">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Product"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Furniture -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Furniture">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Product"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Laptop -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Laptop">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Electronics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Mobile -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Mobile">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Electronics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Offer -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Offer"/>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Product -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Product"/>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Seating -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Seating">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Furniture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Seller -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Seller"/>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Shelf -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Shelf">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Sofa -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Sofa">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Seating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Storage -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Storage">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Furniture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Study -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Study">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Table"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Table -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Table">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Furniture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Television -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Television">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Electronics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Wardrobe -->
+
+    <owl:Class rdf:about="http://dm-project.org/multi-portal-xcommerce#Wardrobe">
+        <rdfs:subClassOf rdf:resource="http://dm-project.org/multi-portal-xcommerce#Storage"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

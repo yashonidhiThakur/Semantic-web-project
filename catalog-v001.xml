@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://dm-project.org/multi-portal-xcommerce" uri="logmap-matcher/target/Output_amazon/module2_overlapping_logmap2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://dm-project.org/multi-portal-xcommerce/" uri="DMProject.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://www.cs.ox.ac.uk/isg/projects/LogMap/mappings.owl" uri="logmap-matcher/target/MyntraIntegratedFinal.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://www.semanticweb.org/athira/ontologies/2026/xcommerce" uri="logmap-matcher/target/Output/module1_overlapping_logmap2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://www.semanticweb.org/athira/ontologies/2026/xcommerce/" uri="Myntra.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://www.semanticweb.org/hp/ontologies/2026/1/flipkart" uri="logmap-matcher/target/Output_flipkart/module1_overlapping_logmap2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://www.semanticweb.org/hp/ontologies/2026/1/flipkart/" uri="flipkart_rdf_file_updated.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://www.semanticweb.org/hp/ontologies/2026/2/untitled-ontology-69/" uri="new_mapping_rdf.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://www.semanticweb.org/kirti/ontologies/2026/2/untitled-ontology-24/" uri="AmazonMappedLatest.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://www.semanticweb.org/kirti/ontologies/2026/2/untitled-ontology-25/" uri="ManualMapping.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon" uri="logmap-matcher/target/Output_amazon/module1_overlapping_logmap2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon/" uri="amazon_data.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://dm-project.org/multi-portal-xcommerce" uri="logmap-matcher/target/Output_flipkart/module2_overlapping_logmap2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://dm-project.org/multi-portal-xcommerce" uri="logmap-matcher/target/Output/module2_overlapping_logmap2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://dm-project.org/multi-portal-xcommerce/" uri="logmap-matcher/target/DMProject.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.cs.ox.ac.uk/isg/projects/LogMap/mappings.owl" uri="logmap-matcher/target/Output_amazon/logmap2_mappings.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.cs.ox.ac.uk/isg/projects/LogMap/mappings.owl" uri="logmap-matcher/target/Output_amazon/logmap_anchors.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.cs.ox.ac.uk/isg/projects/LogMap/mappings.owl" uri="logmap-matcher/target/Output_amazon/logmap_mappings.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.cs.ox.ac.uk/isg/projects/LogMap/mappings.owl" uri="logmap-matcher/target/Output_flipkart/logmap2_mappings.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.cs.ox.ac.uk/isg/projects/LogMap/mappings.owl" uri="logmap-matcher/target/Output_flipkart/logmap_anchors.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.cs.ox.ac.uk/isg/projects/LogMap/mappings.owl" uri="logmap-matcher/target/Output_flipkart/logmap_mappings.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.cs.ox.ac.uk/isg/projects/LogMap/mappings.owl" uri="logmap-matcher/target/Output/logmap2_mappings.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.cs.ox.ac.uk/isg/projects/LogMap/mappings.owl" uri="logmap-matcher/target/Output/logmap_anchors.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.cs.ox.ac.uk/isg/projects/LogMap/mappings.owl" uri="logmap-matcher/target/Output/logmap_mappings.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.semanticweb.org/athira/ontologies/2026/xcommerce/" uri="logmap-matcher/target/Myntra.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.semanticweb.org/hp/ontologies/2026/1/flipkart/" uri="logmap-matcher/target/flipkart_rdf_file.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1774882980901" name="shadowed:http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon/" uri="logmap-matcher/target/Amazon.rdf"/>
+    </group>
+</catalog>

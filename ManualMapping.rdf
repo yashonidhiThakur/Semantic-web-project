@@ -1,0 +1,694 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/kirti/ontologies/2026/2/untitled-ontology-25/"
+     xml:base="http://www.semanticweb.org/kirti/ontologies/2026/2/untitled-ontology-25/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/kirti/ontologies/2026/2/untitled-ontology-25">
+        <owl:imports rdf:resource="http://dm-project.org/multi-portal-xcommerce"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Sells -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Sells">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#sellsProduct"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasSeller -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasSeller">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#has_Seller"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasoffer -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasoffer">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#hasoffer"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offerprovidedby -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#offerprovidedby">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#offered_by"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#onProduct -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#onProduct">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#appliesToProduct"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#battery -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#battery">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Battery_life"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#batteryLife -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#batteryLife">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Battery_hours"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#brand -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#brand">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Brand_name"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Brandname"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#camRes -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#camRes">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Pixels"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#color -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#color">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Color"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#dimensions -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#dimensions">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Dimension"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#displaySize -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#displaySize">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Display_size"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#displayTech -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#displayTech">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Display_technology"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#doorCount -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#doorCount">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Door_Count"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#doorKind -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#doorKind">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Type_of_door"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#drawerCount -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#drawerCount">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Drawer_Count"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasLock -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasLock">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#islocker"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasLocker -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasLocker">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Armoire_Locker"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasMirror -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasMirror">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Armoire_Mirror"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasStorage -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasStorage">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Study_Storage"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasWheels -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasWheels">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Wheels"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hasarmRest -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hasarmRest">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Arm_Rest"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hddUnit -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hddUnit">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#HDDUnit"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#hddValue -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#hddValue">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#HDDValue"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isAssemblyRequired -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#isAssemblyRequired">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Requires_Assembly"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isOpen -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#isOpen">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Shelf_Open"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#isRecliner -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#isRecliner">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Recliner"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#legCount -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#legCount">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Legs"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#madeIn -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#madeIn">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Manufacturing_country"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#material -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#material">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#material"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#mountType -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#mountType">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Mount_type"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offerEndDate -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#offerEndDate">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Enddate"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offerStartDate -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#offerStartDate">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Startdate"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#offeredDiscount -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#offeredDiscount">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Discount"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#os -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#os">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#OS"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#platform -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#platform">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Platform"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#price -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#price">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#BasePrice"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#procSpeedUnit -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#procSpeedUnit">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Processor_speed_Unit"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#procSpeedValue -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#procSpeedValue">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Processor_speed_Value"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#productID -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#productID">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#ProductID"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#productName -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#productName">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Product_Name"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#productRatings -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#productRatings">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Ratings_Reviews"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#ramUnit -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#ramUnit">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Laptop_RAM_Unit"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#ramValue -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#ramValue">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Laptop_RAM_Value"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#resolution -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#resolution">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Screen_resolution"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#seaters -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#seaters">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seating_capacity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerCity -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerCity">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Location"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerContact -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerContact">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Contact_info"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerName -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerName">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_name"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#sellerRating -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#sellerRating">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_Ratings"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#shape -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#shape">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Shape"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Table_Shape"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#simCardSlotCnt -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#simCardSlotCnt">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#SIM_slots"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#storageUnit -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#storageUnit">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Storage_Unit"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#storageValue -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#storageValue">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Storage_Value"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#tableTopThickness -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#tableTopThickness">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Dining_Thickness"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#topMaterial -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#topMaterial">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Surface_material"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#upholsteryType -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#upholsteryType">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#cushion_material"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#volume -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#volume">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Max_capacity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#warranty -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#warranty">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Warranty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#weightCap -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#weightCap">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Max_weight"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#yom -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#yom">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Manufacturing_year"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Color -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Color">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Colors"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Colour"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Ratings_Reviews -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Ratings_Reviews">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Products"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Chair -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Chair">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Chairs"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Dining -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Dining">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Dining_Table"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Electronics -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Electronics">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Electronic_Devices"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Furniture -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Furniture">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Furniture"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Laptop -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Laptop">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Laptops"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Mobile -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Mobile">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Mobiles"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Offer -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Offer">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Deals&amp;Offers"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Product -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Product">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Products"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Seating -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Seating">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seating_Furniture"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Seller -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Seller">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Shelf -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Shelf">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Shelf"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Sofa -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Sofa">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Sofas"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Storage -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Storage">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Storage_Furniture"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Study -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Study">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Study_Table"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Table -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Table">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Tables"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Television -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Television">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#TeleVisions"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dm-project.org/multi-portal-xcommerce#Wardrobe -->
+
+    <rdf:Description rdf:about="http://dm-project.org/multi-portal-xcommerce#Wardrobe">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Armoire"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

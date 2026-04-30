@@ -1,0 +1,15 @@
+.git
+**/target/
+**/node_modules/
+**/.idea/
+**/.mvn/
+**/*.iml
+**/.classpath
+**/.project
+**/.settings/
+**/logs/
+apache-jena-fuseki-6.0.0/run/databases/
+apache-jena-fuseki-6.0.0/run/logs/
+apache-jena-fuseki-6.0.0/run/backups/
+apache-jena-fuseki-6.0.0/run/system_files/
+logmap-matcher/target/

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | XCommerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ff3f6c',
+                        secondary: '#6366f1',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/app.css?v=2" />
+</head>
+<body class="bg-[#f8fafc] dark:bg-[#0f172a]">
+    <header class="topbar sticky top-0 z-50">
+        <div class="topbar-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="/" class="brand">
+                <div class="logo-icon">
+                    <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">XCommerce</span>
+                    <span class="brand-tag">Administration Control</span>
+                </div>
+            </a>
+            <div class="flex items-center space-x-4">
+                <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-primary/10 text-primary border border-primary/20 uppercase tracking-widest">
+                    System Active
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+        <!-- Dashboard Header -->
+        <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+                <h1 class="text-2xl font-black text-slate-900 dark:text-white">Partner Management</h1>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Review onboarding requests and manage partner catalog ingestion.</p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <a href="/partner-onboarding.html" class="btn-secondary">
+                    <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                    New Onboarding
+                </a>
+                <a href="/product-search.html" class="btn-secondary">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Back to Search
+                </a>
+            </div>
+        </div>
+
+        <!-- Metrics Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div class="premium-card p-6 bg-white">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 rounded-2xl bg-primary/10 text-primary">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total Partners</p>
+                        <p class="text-xl font-black text-slate-900" id="stat-total">--</p>
+                    </div>
+                </div>
+            </div>
+            <div class="premium-card p-6 bg-white">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 rounded-2xl bg-amber-500/10 text-amber-500">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Pending Actions</p>
+                        <p class="text-xl font-black text-slate-900" id="stat-pending">--</p>
+                    </div>
+                </div>
+            </div>
+            <div class="premium-card p-6 bg-white">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 rounded-2xl bg-emerald-500/10 text-emerald-500">
+                        <i data-lucide="check-circle" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Active Integrations</p>
+                        <p class="text-xl font-black text-slate-900" id="stat-active">--</p>
+                    </div>
+                </div>
+            </div>
+            <div class="premium-card p-6 bg-white">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 rounded-2xl bg-secondary/10 text-secondary">
+                        <i data-lucide="database" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Knowledge Graph</p>
+                        <p class="text-xl font-black text-slate-900">Connected</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Panel -->
+        <div class="premium-card bg-white shadow-xl">
+            <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex-1 min-w-[300px] max-w-md">
+                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Admin Security Key</label>
+                    <div class="flex gap-2">
+                        <div class="relative flex-1">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                <i data-lucide="key" class="w-4 h-4"></i>
+                            </div>
+                            <input id="key" type="password" class="input pl-10 h-11" placeholder="Enter admin key..." value="change-me" />
+                        </div>
+                        <button id="refresh" class="btn-primary h-11 px-6">
+                            <i data-lucide="rotate-cw" class="w-4 h-4"></i>
+                            Load Data
+                        </button>
+                    </div>
+                </div>
+                <div id="status" class="text-sm font-semibold"></div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-slate-50/50 text-left">
+                            <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest">ID</th>
+                            <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest">Partner</th>
+                            <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest">Status</th>
+                            <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest">Created</th>
+                            <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest">Approved</th>
+                            <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest text-center">Mapping</th>
+                            <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-widest text-right">Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody" class="divide-y divide-slate-100">
+                        <!-- Loaded via JS -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="empty-state" class="hidden p-20 text-center">
+                <div class="mx-auto w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center mb-4">
+                    <i data-lucide="layers" class="w-8 h-8 text-slate-300"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">No integration requests</h3>
+                <p class="text-slate-500">Enter a valid admin key and refresh to see partner requests.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        const keyEl = document.getElementById('key');
+        const statusEl = document.getElementById('status');
+        const tbody = document.getElementById('tbody');
+        const refreshBtn = document.getElementById('refresh');
+        const emptyState = document.getElementById('empty-state');
+
+        function setStatus(t, ok) {
+            statusEl.textContent = t;
+            statusEl.className = `text-sm font-semibold px-4 py-2 rounded-lg ${ok ? 'bg-emerald-50 text-emerald-600 border border-emerald-100' : 'bg-rose-50 text-rose-600 border border-rose-100'}`;
+            if(!t) statusEl.className = 'hidden';
+            setTimeout(() => { statusEl.className = 'hidden'; }, 5000);
+        }
+
+        function fmt(dt) {
+            if (!dt) return '<span class="text-slate-300">—</span>';
+            try { 
+                const d = new Date(dt);
+                return `<div class="text-sm font-medium text-slate-900">${d.toLocaleDateString()}</div>
+                        <div class="text-[10px] text-slate-400 font-bold">${d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>`;
+            } catch { return String(dt); }
+        }
+
+        async function api(path, opts) {
+            const res = await fetch(path, opts);
+            const text = await res.text();
+            if (!res.ok) throw new Error(text || ('HTTP ' + res.status));
+            return text ? JSON.parse(text) : {};
+        }
+
+        async function refresh() {
+            tbody.innerHTML = '';
+            emptyState.classList.add('hidden');
+            const key = keyEl.value;
+            if (!key) { setStatus('Admin key is required', false); return; }
+
+            refreshBtn.disabled = true;
+            refreshBtn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Loading...';
+            lucide.createIcons();
+
+            try {
+                const data = await api('/admin/partners?key=' + encodeURIComponent(key));
+                const partners = Array.isArray(data.partners) ? data.partners : [];
+
+                if(partners.length === 0) {
+                    emptyState.classList.remove('hidden');
+                }
+
+                // Update Stats
+                document.getElementById('stat-total').textContent = partners.length;
+                document.getElementById('stat-pending').textContent = partners.filter(p => p.status === 'PENDING').length;
+                document.getElementById('stat-active').textContent = partners.filter(p => p.status === 'APPROVED').length;
+
+                for (const p of partners) {
+                    const tr = document.createElement('tr');
+                    tr.className = "hover:bg-slate-50/50 transition-colors";
+                    
+                    const statusClass = {
+                        'PENDING': 'bg-amber-100 text-amber-700',
+                        'APPROVED': 'bg-emerald-100 text-emerald-700',
+                        'REJECTED': 'bg-rose-100 text-rose-700',
+                        'DELETED': 'bg-slate-200 text-slate-600'
+                    }[p.status] || 'bg-slate-100 text-slate-600';
+
+                    tr.innerHTML = `
+                        <td class="px-6 py-4 text-xs font-mono text-slate-400">#${p.id}</td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400 font-bold text-xs uppercase">
+                                    ${p.partnerName.substring(0,2)}
+                                </div>
+                                <div class="font-bold text-slate-900">${p.partnerName}</div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="px-2 py-1 rounded text-[10px] font-black uppercase tracking-wider ${statusClass}">${p.status}</span>
+                        </td>
+                        <td class="px-6 py-4 text-xs text-slate-500">${fmt(p.createdAt)}</td>
+                        <td class="px-6 py-4 text-xs text-slate-500">${fmt(p.approvedAt)}</td>
+                        <td class="px-6 py-4 text-center">
+                            ${p.hasMapping ? 
+                                '<span class="inline-flex items-center text-emerald-500"><i data-lucide="check-circle-2" class="w-4 h-4"></i></span>' : 
+                                '<span class="inline-flex items-center text-slate-200"><i data-lucide="circle" class="w-4 h-4"></i></span>'}
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <div class="flex items-center justify-end gap-2 actions-cell"></div>
+                        </td>
+                    `;
+
+                    const actionsCol = tr.querySelector('.actions-cell');
+
+                    const mkBtn = (label, icon, colorClass, onClick) => {
+                        const b = document.createElement('button');
+                        b.type = 'button';
+                        b.className = `inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${colorClass}`;
+                        b.innerHTML = `<i data-lucide="${icon}" class="w-3.5 h-3.5"></i> ${label}`;
+                        b.addEventListener('click', async () => {
+                            b.disabled = true;
+                            b.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i>`;
+                            lucide.createIcons();
+                            await onClick();
+                        });
+                        return b;
+                    };
+
+                    if (p.status === 'PENDING') {
+                        actionsCol.appendChild(mkBtn('Approve', 'check', 'bg-emerald-500 text-white hover:bg-emerald-600', async () => {
+                            try {
+                                await api(`/admin/partners/${p.id}/approve?key=${encodeURIComponent(key)}`, { method: 'POST' });
+                                await refresh();
+                            } catch (e) { setStatus(String(e), false); await refresh(); }
+                        }));
+
+                        actionsCol.appendChild(mkBtn('Reject', 'x', 'bg-rose-50 text-rose-600 hover:bg-rose-100', async () => {
+                            try {
+                                await api(`/admin/partners/${p.id}/reject?key=${encodeURIComponent(key)}`, { method: 'POST' });
+                                await refresh();
+                            } catch (e) { setStatus(String(e), false); await refresh(); }
+                        }));
+                    }
+
+                    if (p.status === 'APPROVED') {
+                        // File upload UI
+                        const fileLabel = document.createElement('label');
+                        fileLabel.className = "cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-secondary/10 text-secondary hover:bg-secondary/20 transition-all";
+                        fileLabel.innerHTML = `<i data-lucide="file-up" class="w-3.5 h-3.5"></i> ${p.hasMapping ? 'Update Mapping' : 'Upload Mapping'}`;
+                        
+                        const fileInput = document.createElement('input');
+                        fileInput.type = 'file';
+                        fileInput.className = "hidden";
+                        fileInput.accept = '.rdf,.ttl,.nt,.n3,.owl';
+                        
+                        fileInput.addEventListener('change', async () => {
+                            try {
+                                const f = fileInput.files && fileInput.files[0];
+                                if (!f) return;
+                                setStatus(`Uploading ${f.name}...`, true);
+                                const fd = new FormData();
+                                fd.append('mapping', f);
+                                await fetch(`/admin/partners/${p.id}/upload-mapping?key=${encodeURIComponent(key)}`, { method: 'POST', body: fd }).then(async r => {
+                                    if (!r.ok) throw new Error(await r.text() || ('HTTP ' + r.status));
+                                });
+                                setStatus('Mapping uploaded successfully.', true);
+                                await refresh();
+                            } catch (e) { setStatus(String(e), false); await refresh(); }
+                        });
+                        
+                        fileLabel.appendChild(fileInput);
+                        actionsCol.appendChild(fileLabel);
+
+                        actionsCol.appendChild(mkBtn('Sync Data', 'upload-cloud', 'bg-blue-500 text-white hover:bg-blue-600', async () => {
+                            try {
+                                await api(`/admin/partners/${p.id}/load-rdf?key=${encodeURIComponent(key)}`, { method: 'POST' });
+                                setStatus('Data synchronized with Fuseki.', true);
+                                await refresh();
+                            } catch (e) { setStatus(String(e), false); await refresh(); }
+                        }));
+
+                        actionsCol.appendChild(mkBtn('Del Data', 'trash-2', 'bg-rose-50 text-rose-600 hover:bg-rose-100', async () => {
+                            if (!confirm('Remove this partner data graph from Fuseki?')) return;
+                            try {
+                                await api(`/admin/partners/${p.id}/delete-data-graph?key=${encodeURIComponent(key)}`, { method: 'POST' });
+                                setStatus('Data graph removed.', true);
+                                await refresh();
+                            } catch (e) { setStatus(String(e), false); await refresh(); }
+                        }));
+
+                        if (p.hasMapping) {
+                            actionsCol.appendChild(mkBtn('Sync Map', 'zap', 'bg-emerald-500 text-white hover:bg-emerald-600', async () => {
+                                try {
+                                    await api(`/admin/partners/${p.id}/load-mapping?key=${encodeURIComponent(key)}`, { method: 'POST' });
+                                    setStatus('Mapping synchronized with Fuseki.', true);
+                                    await refresh();
+                                } catch (e) { setStatus(String(e), false); await refresh(); }
+                            }));
+
+                            actionsCol.appendChild(mkBtn('Del Map', 'trash-2', 'bg-rose-50 text-rose-600 hover:bg-rose-100', async () => {
+                                if (!confirm('Remove this partner mapping graph from Fuseki?')) return;
+                                try {
+                                    await api(`/admin/partners/${p.id}/delete-mapping-graph?key=${encodeURIComponent(key)}`, { method: 'POST' });
+                                    setStatus('Mapping graph removed.', true);
+                                    await refresh();
+                                } catch (e) { setStatus(String(e), false); await refresh(); }
+                            }));
+                        }
+                    }
+
+                    if (p.status !== 'DELETED') {
+                        const delBtn = document.createElement('button');
+                        delBtn.className = "p-2 text-slate-400 hover:text-rose-500 transition-colors";
+                        delBtn.innerHTML = `<i data-lucide="trash-2" class="w-4 h-4"></i>`;
+                        delBtn.addEventListener('click', async () => {
+                            if (!confirm('Completely remove this partner and drop their graph from the system?')) return;
+                            try {
+                                await api(`/admin/partners/${p.id}/delete?key=${encodeURIComponent(key)}`, { method: 'POST' });
+                                await refresh();
+                            } catch (e) { setStatus(String(e), false); await refresh(); }
+                        });
+                        actionsCol.appendChild(delBtn);
+                    } else {
+                        const msg = document.createElement('span');
+                        msg.className = 'text-[10px] font-bold text-slate-300 uppercase italic';
+                        msg.textContent = 'Archive Only';
+                        actionsCol.appendChild(msg);
+                    }
+
+                    tbody.appendChild(tr);
+                }
+                lucide.createIcons();
+            } catch (e) {
+                setStatus(String(e), false);
+            } finally {
+                refreshBtn.disabled = false;
+                refreshBtn.innerHTML = '<i data-lucide="rotate-cw" class="w-4 h-4"></i> Load Data';
+                lucide.createIcons();
+            }
+        }
+
+        refreshBtn.addEventListener('click', refresh);
+        // Initial load tip
+        lucide.createIcons();
+    </script>
+</body>
+</html>

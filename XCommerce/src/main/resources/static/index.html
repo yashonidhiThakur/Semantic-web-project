@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XCommerce | Unified Commerce Discovery</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ff3f6c',
+                        secondary: '#6366f1',
+                    },
+                    borderRadius: {
+                        '2xl': '1.5rem',
+                        '3xl': '2rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/app.css?v=2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body class="bg-[#f8fafc] dark:bg-[#0f172a] transition-colors duration-300">
+    <!-- Topbar -->
+    <header class="topbar sticky top-0 z-50">
+        <div class="topbar-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="/" class="brand group">
+                <div class="logo-icon group-hover:scale-110 transition-transform duration-300">
+                    <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name text-xl font-extrabold tracking-tight">XCommerce</span>
+                    <span class="brand-tag opacity-75">Unified commerce discovery</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center space-x-4">
+                <span class="px-4 py-1.5 rounded-full text-xs font-medium bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400">
+                    One platform for products + partners
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <div class="relative max-w-7xl mx-auto">
+            <!-- Hero Section -->
+            <div class="text-center animate__animated animate__fadeIn">
+                <h1 class="text-2xl tracking-tight font-extrabold text-slate-900 dark:text-white sm:text-3xl md:text-4xl">
+                    <span class="block">Stop searching,</span>
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">start choosing.</span>
+                </h1>
+                <p class="mt-6 max-w-md mx-auto text-xs text-slate-500 dark:text-slate-400 sm:text-sm md:mt-8 md:text-base md:max-w-3xl">
+                    Unified partner offers at your fingertips. Discover products from multiple platforms in one seamless experience.
+                </p>
+                <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+                    <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-1 sm:gap-5">
+                        <a href="/product-search.html" class="btn-primary text-lg px-8 py-4 w-full sm:w-auto">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                            Explore Marketplace
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="mt-24 grid gap-8 lg:grid-cols-3 sm:max-w-lg sm:mx-auto lg:max-w-none animate__animated animate__fadeInUp animate__delay-1s">
+                <!-- Explore Products -->
+                <div class="premium-card p-8 flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                        <i data-lucide="shopping-bag" class="w-8 h-8 text-primary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Explore Products</h3>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 flex-grow">
+                        Search across all our partners with advanced filters and smart indexing.
+                    </p>
+                    <a href="/product-search.html" class="w-full">
+                        <button class="btn-secondary w-full">Search Now</button>
+                    </a>
+                </div>
+
+                <!-- Partner Onboarding -->
+                <div class="premium-card p-8 flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                        <i data-lucide="users" class="w-8 h-8 text-secondary group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Partner Onboarding</h3>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 flex-grow">
+                        Join our unified network. Submit your RDF data and reach millions of customers.
+                    </p>
+                    <a href="/partner-onboarding.html" class="w-full">
+                        <button class="btn-secondary w-full">Join Network</button>
+                    </a>
+                </div>
+
+                <!-- Admin Dashboard -->
+                <div class="premium-card p-8 flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                        <i data-lucide="layout-dashboard" class="w-8 h-8 text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Admin Dashboard</h3>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 flex-grow">
+                        Internal tools for managing partner approvals and data ingestion workflows.
+                    </p>
+                    <a href="/admin-dashboard.html" class="w-full">
+                        <button class="btn-secondary w-full">Access Tools</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm">© 2026 XCommerce. Built with semantic precision.</p>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+[ {
+  "id" : "d4496b56-a5c5-4e14-9521-c3ad74c5020c",
+  "partnerName" : "Amazon",
+  "rdfFileName" : "amazon_data.rdf",
+  "rdfPath" : "uploads\\partners\\Amazon\\d4496b56-a5c5-4e14-9521-c3ad74c5020c\\amazon_data.rdf",
+  "mappingFileName" : null,
+  "mappingPath" : null,
+  "status" : "PENDING",
+  "createdAt" : 1775764392.442860300,
+  "updatedAt" : 1775764392.445259900
+}, {
+  "id" : "934d967f-5ced-4111-948c-b09449b2b663",
+  "partnerName" : "Amazon",
+  "rdfFileName" : "amazon_data.rdf",
+  "rdfPath" : "uploads\\partners\\Amazon\\934d967f-5ced-4111-948c-b09449b2b663\\amazon_data.rdf",
+  "mappingFileName" : null,
+  "mappingPath" : null,
+  "status" : "PENDING",
+  "createdAt" : 1775764259.330768200,
+  "updatedAt" : 1775764259.403241200
+}, {
+  "id" : "9234c37b-b09d-4d53-8a10-75fc79166fa7",
+  "partnerName" : "Amazon",
+  "rdfFileName" : "amazon_data.rdf",
+  "rdfPath" : "uploads\\partners\\Amazon\\9234c37b-b09d-4d53-8a10-75fc79166fa7\\amazon_data.rdf",
+  "mappingFileName" : null,
+  "mappingPath" : null,
+  "status" : "DATA_LOADED",
+  "createdAt" : 1775763489.455711800,
+  "updatedAt" : 1775764299.740011500
+}, {
+  "id" : "ab5efc34-74f8-44d9-a61f-6c2f61e1b6bd",
+  "partnerName" : "Amazon",
+  "rdfFileName" : "amazon_data.rdf",
+  "rdfPath" : "uploads\\partners\\Amazon\\ab5efc34-74f8-44d9-a61f-6c2f61e1b6bd\\amazon_data.rdf",
+  "mappingFileName" : "AmazonMappedLatest.rdf",
+  "mappingPath" : "uploads\\partners\\Amazon\\ab5efc34-74f8-44d9-a61f-6c2f61e1b6bd\\AmazonMappedLatest.rdf",
+  "status" : "MAPPING_LOADED",
+  "createdAt" : 1775763115.320629700,
+  "updatedAt" : 1775763256.346790300
+} ]

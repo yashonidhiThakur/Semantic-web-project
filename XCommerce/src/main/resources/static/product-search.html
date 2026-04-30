@@ -48,7 +48,20 @@
 
       function ProductSearchForm() {
         // --- LOGIC PRESERVED FROM ORIGINAL ---
+
+        const Icon = ({ name, cls }) => {
+            const spanRef = useRef(null);
+            useEffect(() => {
+                if (spanRef.current) {
+                    spanRef.current.innerHTML = `<i data-lucide="${name}" class="${cls || ''}"></i>`;
+                    lucide.createIcons({ root: spanRef.current });
+                }
+            }, [name, cls]);
+            return <span ref={spanRef} className="inline-flex items-center justify-center" />;
+        };
+
         const categories = useMemo(() => ["Electronic Devices", "Furniture"], []);
+
         const [category, setCategory] = useState("");
         const electronicSubCategories = useMemo(() => ["Laptop", "Mobile", "TV"], []);
         const furnitureGroups = useMemo(() => ["Seating", "Table", "Storage"], []);
@@ -59,11 +72,10 @@
         }), []);
 
         const filterOptions = useMemo(() => ({
-          Laptop: {
+                    Laptop: {
             Brand: ["Dell", "HP", "Lenovo", "Apple", "Asus", "Acer", "MSI"],
             Color: ["Black", "Silver", "Gray", "White", "Blue"],
-            HDDValue: ["256", "512", "1024", "2048"],
-            HDDUnit: ["GB", "TB"],
+            Storage: ["256GB", "512GB", "1TB", "2TB"],
             RAM: ["8", "16", "32", "64"],
             OS: ["Windows", "macOS", "Linux"],
             DisplayTechnology: ["OLED", "IPS", "Mini-LED", "Retina"],
@@ -74,8 +86,7 @@
           Mobile: {
             Brand: ["Apple", "Samsung", "OnePlus", "Google", "Xiaomi", "Vivo"],
             Color: ["Black", "White", "Blue", "Green", "Purple"],
-            StorageValue: ["128", "256", "512", "1024"],
-            StorageUnit: ["GB"],
+            Storage: ["128GB", "256GB", "512GB", "1TB"],
             OS: ["Android", "iOS"],
             DisplayTechnology: ["LTPO AMOLED", "Super Retina XDR", "OLED"],
             DisplaySize: ["6.1", "6.3", "6.7", "6.8"],
@@ -92,6 +103,46 @@
             OS: ["Android TV", "Tizen", "webOS", "Google TV"],
             ManufacturingYear: ["2023", "2024", "2025", "2026"],
           },
+          Chair: {
+            Brand: ["IKEA", "Herman Miller", "Steelcase", "Ashley", "Durian"],
+            Color: ["Black", "White", "Brown", "Grey", "Blue"],
+            Material: ["Wood", "Plastic", "Metal", "Leather", "Fabric"],
+            Seaters: ["1", "2", "3"],
+            HasArmRest: ["Yes", "No"],
+            Dimensions: ["Standard", "Compact", "Large"]
+          },
+          Sofa: {
+            Brand: ["IKEA", "Ashley", "Godrej", "Durian"],
+            Color: ["Black", "Grey", "Beige", "Brown", "Blue"],
+            Material: ["Leather", "Fabric", "Velvet"],
+            SeatingCapacity: ["1", "2", "3", "4", "5", "6"],
+            Shape: ["L-Shape", "U-Shape", "Straight"],
+            Dimensions: ["Standard", "Large"]
+          },
+          Dining: {
+            Brand: ["IKEA", "Godrej", "Durian", "HomeTown"],
+            Color: ["Brown", "Black", "White", "Glass"],
+            Material: ["Wood", "Glass", "Metal", "Marble"],
+            Dimensions: ["4-Seater", "6-Seater", "8-Seater"]
+          },
+          Study: {
+            Brand: ["IKEA", "Godrej", "Wakefit", "HomeTown"],
+            Color: ["Brown", "White", "Black"],
+            Material: ["Wood", "Metal", "Engineered Wood"],
+            Dimensions: ["Standard", "Compact"]
+          },
+          Shelf: {
+            Brand: ["IKEA", "Godrej", "HomeTown"],
+            Color: ["Brown", "White", "Black"],
+            Material: ["Wood", "Metal", "Glass"],
+            Dimensions: ["Small", "Medium", "Large"]
+          },
+          Wardrobe: {
+            Brand: ["IKEA", "Godrej", "Spacewood", "Wakefit"],
+            Color: ["Brown", "White", "Grey", "Black"],
+            Material: ["Wood", "Engineered Wood", "Metal"],
+            Dimensions: ["2-Door", "3-Door", "4-Door"]
+          }
         }), []);
 
         const [dynamicOptions, setDynamicOptions] = useState(null);
@@ -109,6 +160,25 @@
         const [hasSearched, setHasSearched] = useState(false);
 
         useEffect(() => { lucide.createIcons(); }, [category, subCategory, submitting, resultRows, selectedFilters, hasSearched]);
+
+        useEffect(() => {
+            if (!category || !subCategory) {
+                setDynamicOptions(null);
+                return;
+            }
+            fetch('http://localhost:8080/products/filter-options', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ category, subCategory })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.options) {
+                    setDynamicOptions(data.options);
+                }
+            })
+            .catch(err => console.error("Failed to fetch filter options", err));
+        }, [category, subCategory]);
 
         const filterCatalog = useMemo(() => {
           if (!subCategory) return [];
@@ -176,8 +246,12 @@
           const base = { category: category || null, subCategory: subCategory || null, attributes: attributes || {} };
           const nextAttrs = { ...base.attributes };
           // Minimal payload transformation preserved
-          if (subCategory === "Laptop" && nextAttrs.RAMValue && nextAttrs.RAMUnit) {
+                    if (subCategory === "Laptop" && nextAttrs.RAMValue && nextAttrs.RAMUnit) {
             nextAttrs.RAM = nextAttrs.RAMValue + nextAttrs.RAMUnit;
+          }
+          if (subCategory === "Laptop" && nextAttrs.Storage) {
+            nextAttrs.HDD = nextAttrs.Storage;
+            delete nextAttrs.Storage;
           }
           return { ...base, attributes: nextAttrs };
         }, [category, subCategory, attributes]);
@@ -225,7 +299,7 @@
           <header class="topbar">
             <div class="topbar-inner">
                 <a href="/" class="brand">
-                    <div class="logo-icon"><i data-lucide="zap" class="w-6 h-6 text-white"></i></div>
+                    <div class="logo-icon"><Icon name="zap" cls="w-6 h-6 text-white" /></div>
                     <div class="brand-text">
                         <span class="brand-name">XCommerce</span>
                         <span class="brand-tag">Smart Discovery</span>
@@ -246,7 +320,7 @@
               <div className="flex-1 flex items-center justify-center p-6 bg-slate-50">
                 <div className="premium-card w-full max-w-xl p-10 text-center animate__animated animate__zoomIn">
                     <div className="w-20 h-20 rounded-3xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-8">
-                        <i data-lucide="search" className="w-10 h-10"></i>
+                        <Icon name="search" cls="w-10 h-10" />
                     </div>
                     <h1 className="text-2xl font-black text-slate-900 mb-2">Start your search</h1>
                     <p className="text-sm text-slate-500 mb-8 leading-relaxed max-w-sm mx-auto">Select a category to explore thousands of products from our premium partner network.</p>
@@ -265,11 +339,11 @@
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                             <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3">
-                                <i data-lucide="shield-check" className="w-5 h-5 text-emerald-500"></i>
+                                <Icon name="shield-check" cls="w-5 h-5 text-emerald-500" />
                                 <span className="text-xs font-bold text-slate-600">Verified Partners</span>
                             </div>
                             <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3">
-                                <i data-lucide="zap" className="w-5 h-5 text-amber-500"></i>
+                                <Icon name="zap" cls="w-5 h-5 text-amber-500" />
                                 <span className="text-xs font-bold text-slate-600">Real-time Pricing</span>
                             </div>
                         </div>
@@ -289,7 +363,7 @@
                 <aside className="w-80 border-r border-slate-200 bg-white flex flex-col">
                     <div className="p-5 border-b border-slate-100 flex items-center justify-between">
                         <h2 className="font-black text-slate-900 flex items-center gap-2">
-                            <i data-lucide="sliders-horizontal" className="w-4 h-4 text-primary"></i>
+                            <Icon name="sliders-horizontal" cls="w-4 h-4 text-primary" />
                             Filters
                         </h2>
                         <button onClick={() => setCategory("")} className="text-[10px] font-bold text-slate-400 hover:text-primary uppercase tracking-wider">Change Category</button>
@@ -307,7 +381,7 @@
                                         className={`flex items-center justify-between p-3 rounded-xl border text-sm font-bold transition-all ${subCategory === sc ? 'border-primary bg-primary/5 text-primary' : 'border-slate-100 hover:border-slate-200 text-slate-600'}`}
                                     >
                                         {sc}
-                                        {subCategory === sc && <i data-lucide="check" className="w-4 h-4"></i>}
+                                        {subCategory === sc && <Icon name="check" cls="w-4 h-4" />}
                                     </button>
                                 )) : furnitureGroups.map(g => (
                                     <div key={g} className="space-y-2">
@@ -316,7 +390,7 @@
                                             className={`w-full flex items-center justify-between p-3 rounded-xl border text-sm font-bold transition-all ${furnitureGroup === g ? 'border-secondary bg-secondary/5 text-secondary' : 'border-slate-100 hover:border-slate-200 text-slate-600'}`}
                                         >
                                             {g}
-                                            {furnitureGroup === g && <i data-lucide="chevron-down" className="w-4 h-4"></i>}
+                                            {furnitureGroup === g && <Icon name="chevron-down" cls="w-4 h-4" />}
                                         </button>
                                         {furnitureGroup === g && (
                                             <div className="pl-4 space-y-1">
@@ -357,7 +431,7 @@
                                             disabled={!addFilterKey}
                                             className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed"
                                         >
-                                            <i data-lucide="plus" className="w-5 h-5"></i>
+                                            <Icon name="plus" cls="w-5 h-5" />
                                         </button>
                                     </div>
                                 </div>
@@ -372,10 +446,10 @@
                                                     onClick={() => removeSelectedFilter(filterId)}
                                                     className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-rose-500 hover:text-white"
                                                 >
-                                                    <i data-lucide="x" className="w-3 h-3"></i>
+                                                    <Icon name="x" cls="w-3 h-3" />
                                                 </button>
                                                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                                                    <i data-lucide={fDef?.icon || 'circle'} className="w-3 h-3"></i>
+                                                    <Icon name={fDef?.icon || 'circle'} cls="w-3 h-3" />
                                                     {fDef?.label || filterId}
                                                 </label>
                                                 
@@ -383,7 +457,7 @@
                                                     <div className="flex gap-2">
                                                         <select className="input h-9 py-0 text-xs font-bold" value={attributes.RAMValue || ""} onChange={e => setAttributes({...attributes, RAMValue: e.target.value})}>
                                                             <option value="">Val</option>
-                                                            {(filterOptions[subCategory]?.RAM || ["8","16","32"]).map(v => <option key={v} value={v}>{v}</option>)}
+                                                            {((dynamicOptions && dynamicOptions.RAMValue) || filterOptions[subCategory]?.RAM || ["8","16","32"]).map(v => <option key={v} value={v}>{v}</option>)}
                                                         </select>
                                                         <select className="input h-9 py-0 text-xs font-bold w-20" value={attributes.RAMUnit || ""} onChange={e => setAttributes({...attributes, RAMUnit: e.target.value})}>
                                                             <option value="">Unit</option>
@@ -397,7 +471,7 @@
                                                         onChange={(e) => setAttributes({...attributes, [filterId]: e.target.value})}
                                                     >
                                                         <option value="">Any {fDef?.label}</option>
-                                                        {(filterOptions[subCategory]?.[filterId] || []).map(o => <option key={o} value={o}>{o}</option>)}
+                                                        {((dynamicOptions && dynamicOptions[filterId]) || filterOptions[subCategory]?.[filterId] || []).map(o => <option key={o} value={o}>{o}</option>)}
                                                     </select>
                                                 )}
                                             </div>
@@ -414,7 +488,7 @@
                             disabled={!subCategory || submitting}
                             className="btn-primary w-full h-12"
                         >
-                            {submitting ? <i data-lucide="loader-2" className="w-5 h-5 animate-spin"></i> : <i data-lucide="search" className="w-5 h-5"></i>}
+                            {submitting ? <Icon name="loader-2" cls="w-5 h-5 animate-spin" /> : <Icon name="search" cls="w-5 h-5" />}
                             {submitting ? 'Searching...' : 'Explore Results'}
                         </button>
                     </div>
@@ -435,7 +509,7 @@
                                 onClick={() => setPriceSortDir(priceSortDir === 'asc' ? 'desc' : 'asc')}
                                 className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${priceSortDir ? 'bg-primary text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
                             >
-                                <i data-lucide={priceSortDir === 'desc' ? 'arrow-down-narrow-wide' : 'arrow-up-wide-narrow'} className="w-4 h-4"></i>
+                                <Icon name={priceSortDir === 'desc' ? 'arrow-down-narrow-wide' : 'arrow-up-wide-narrow'} cls="w-4 h-4" />
                                 Price: {priceSortDir === 'asc' ? 'Low to High' : priceSortDir === 'desc' ? 'High to Low' : 'Sort'}
                             </button>
                         </div>
@@ -484,7 +558,7 @@
                                                     {platformLCase.includes('amazon') && <img src="Logo/Amazon.png" className="w-8 h-8 object-contain" />}
                                                     {platformLCase.includes('flipkart') && <img src="Logo/Flipkart.png" className="w-8 h-8 object-contain" />}
                                                     {platformLCase.includes('myntra') && <img src="Logo/Myntra.png" className="w-8 h-8 object-contain" />}
-                                                    {!['amazon','flipkart','myntra'].some(p => platformLCase.includes(p)) && <i data-lucide="shopping-cart" className="w-6 h-6 text-slate-400"></i>}
+                                                    {!['amazon','flipkart','myntra'].some(p => platformLCase.includes(p)) && <Icon name="shopping-cart" cls="w-6 h-6 text-slate-400" />}
                                                 </div>
                                                 <div className="text-right">
                                                     <div className="text-[10px] font-black text-slate-400 uppercase tracking-tighter line-through opacity-50">
@@ -502,7 +576,7 @@
                         ) : hasSearched ? (
                             <div className="flex flex-col items-center justify-center h-96 text-center animate__animated animate__fadeIn">
                                 <div className="w-24 h-24 rounded-full bg-slate-100 flex items-center justify-center mb-6">
-                                    <i data-lucide="layers-2" className="w-12 h-12 text-slate-300"></i>
+                                    <Icon name="layers-2" cls="w-12 h-12 text-slate-300" />
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900">No products found</h3>
                                 <p className="text-slate-500 mt-2 max-w-xs">Adjust your filters or try a different category to see available offers.</p>
@@ -516,7 +590,7 @@
                         ) : (
                             <div className="flex flex-col items-center justify-center h-96 text-center animate__animated animate__fadeIn">
                                 <div className="w-24 h-24 rounded-full bg-slate-100 flex items-center justify-center mb-6">
-                                    <i data-lucide="filter" className="w-12 h-12 text-slate-300"></i>
+                                    <Icon name="filter" cls="w-12 h-12 text-slate-300" />
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900">Ready to explore {subCategory}</h3>
                                 <p className="text-slate-500 mt-2 max-w-xs">Select your desired filters from the left panel and click Explore Results.</p>

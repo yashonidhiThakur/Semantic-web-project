@@ -56,8 +56,7 @@ public class PartnerAdminService {
 
     public void delete(long id) {
         PartnerSubmission s = repo.findById(id).orElseThrow();
-        s.setStatus(PartnerStatus.DELETED);
-        repo.save(s);
+        repo.delete(s);
         fusekiClient.deleteGraph("urn:partner:data:" + id);
         fusekiClient.deleteGraph("urn:partner:mapping:" + id);
     }
@@ -84,7 +83,10 @@ public class PartnerAdminService {
     }
 
     public void deleteDataFromFuseki(long id) {
+        PartnerSubmission s = repo.findById(id).orElseThrow();
         fusekiClient.deleteGraph("urn:partner:data:" + id);
+        fusekiClient.deleteGraph("urn:partner:mapping:" + id);
+        repo.delete(s);
     }
 
     public void deleteMappingFromFuseki(long id) {

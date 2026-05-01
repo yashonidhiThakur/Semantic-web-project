@@ -1107,7 +1107,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2026/1/flipkart#Offer1">
         <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/1/flipkart/offer"/>
         <discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25.0</discount>
-        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-31T23:59:59</end_date>
+        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-03-31T23:59:59</end_date>
         <start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-01T00:00:00</start_date>
         <Ddscount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.5</Ddscount>
     </owl:NamedIndividual>
@@ -1119,7 +1119,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2026/1/flipkart#Offer2">
         <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/1/flipkart/offer"/>
         <discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.0</discount>
-        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-10T23:59:59</end_date>
+        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-10T23:59:59</end_date>
         <start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-01T00:00:00</start_date>
         <Ddscount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20.0</Ddscount>
     </owl:NamedIndividual>
@@ -1131,7 +1131,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2026/1/flipkart#Offer3">
         <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/1/flipkart/offer"/>
         <discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.0</discount>
-        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-20T23:59:59</end_date>
+        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-05-20T23:59:59</end_date>
         <start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-01T00:00:00</start_date>
         <Ddscount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.75</Ddscount>
     </owl:NamedIndividual>
@@ -1143,7 +1143,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2026/1/flipkart#Offer_001">
         <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2026/1/flipkart/offer"/>
         <discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25.0</discount>
-        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-31T23:59:59</end_date>
+        <end_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-03-31T23:59:59</end_date>
         <start_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-20T00:00:00</start_date>
         <Ddscount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.5</Ddscount>
     </owl:NamedIndividual>

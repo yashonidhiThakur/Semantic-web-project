@@ -626,7 +626,7 @@
     <amz:offerBy rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_001"/>
     <amz:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.5</amz:Discount>
     <amz:Start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-20T00:00:00</amz:Start>
-    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-31T23:59:59</amz:End>
+    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-03-31T23:59:59</amz:End>
   </owl:NamedIndividual>
 
   <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_001">
@@ -2329,7 +2329,7 @@
     <amz:offerBy rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_002"/>
     <amz:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.6</amz:Discount>
     <amz:Start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-21T00:00:00</amz:Start>
-    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-30T00:00:00</amz:End>
+    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-30T00:00:00</amz:End>
   </owl:NamedIndividual>
 
   <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_003">
@@ -2350,7 +2350,7 @@
     <amz:offerBy rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_003"/>
     <amz:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36.3</amz:Discount>
     <amz:Start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-24T00:00:00</amz:Start>
-    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-19T00:00:00</amz:End>
+    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-19T00:00:00</amz:End>
   </owl:NamedIndividual>
 
   <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_004">
@@ -2371,7 +2371,7 @@
     <amz:offerBy rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_004"/>
     <amz:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.9</amz:Discount>
     <amz:Start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-25T00:00:00</amz:Start>
-    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-12T00:00:00</amz:End>
+    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-12T00:00:00</amz:End>
   </owl:NamedIndividual>
 
   <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_005">
@@ -2392,7 +2392,7 @@
     <amz:offerBy rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_005"/>
     <amz:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">37.9</amz:Discount>
     <amz:Start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-24T00:00:00</amz:Start>
-    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-15T00:00:00</amz:End>
+    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-15T00:00:00</amz:End>
   </owl:NamedIndividual>
 
   <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_006">
@@ -2413,7 +2413,7 @@
     <amz:offerBy rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_006"/>
     <amz:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">33.3</amz:Discount>
     <amz:Start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-25T00:00:00</amz:Start>
-    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-23T00:00:00</amz:End>
+    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-23T00:00:00</amz:End>
   </owl:NamedIndividual>
 
   <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_007">
@@ -2434,7 +2434,7 @@
     <amz:offerBy rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_007"/>
     <amz:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.5</amz:Discount>
     <amz:Start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-21T00:00:00</amz:Start>
-    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-11T00:00:00</amz:End>
+    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-11T00:00:00</amz:End>
   </owl:NamedIndividual>
 
   <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_008">
@@ -2455,7 +2455,7 @@
     <amz:offerBy rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_008"/>
     <amz:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.4</amz:Discount>
     <amz:Start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-25T00:00:00</amz:Start>
-    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-13T00:00:00</amz:End>
+    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-13T00:00:00</amz:End>
   </owl:NamedIndividual>
 
   <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_009">
@@ -2476,7 +2476,7 @@
     <amz:offerBy rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_009"/>
     <amz:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.2</amz:Discount>
     <amz:Start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-20T00:00:00</amz:Start>
-    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-31T00:00:00</amz:End>
+    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-03-31T00:00:00</amz:End>
   </owl:NamedIndividual>
 
   <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_010">
@@ -2497,7 +2497,7 @@
     <amz:offerBy rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_010"/>
     <amz:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">19.0</amz:Discount>
     <amz:Start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-21T00:00:00</amz:Start>
-    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-06T00:00:00</amz:End>
+    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-06T00:00:00</amz:End>
   </owl:NamedIndividual>
 
   <owl:NamedIndividual rdf:about="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_011">
@@ -2518,7 +2518,7 @@
     <amz:offerBy rdf:resource="http://www.semanticweb.org/yashonidhithakur/ontology-2/amazon#Amz_Vendor_011"/>
     <amz:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27.5</amz:Discount>
     <amz:Start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-22T00:00:00</amz:Start>
-    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-03T00:00:00</amz:End>
+    <amz:End rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-03T00:00:00</amz:End>
   </owl:NamedIndividual>
 
 </rdf:RDF>

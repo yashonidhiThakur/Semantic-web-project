@@ -561,9 +561,11 @@
                                                     {!['amazon','flipkart','myntra'].some(p => platformLCase.includes(p)) && <Icon name="shopping-cart" cls="w-6 h-6 text-slate-400" />}
                                                 </div>
                                                 <div className="text-right">
-                                                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-tighter line-through opacity-50">
-                                                        {row.basePrice ? formatPrice(row.basePrice) : ''}
-                                                    </div>
+                                                    {row.hasOffer === "1" && row.basePrice ? (
+                                                        <div className="text-[10px] font-black text-slate-400 uppercase tracking-tighter line-through opacity-50">
+                                                            {formatPrice(row.basePrice)}
+                                                        </div>
+                                                    ) : null}
                                                     <div className={`text-2xl font-black ${isBestDeal ? 'text-primary' : 'text-slate-900'}`}>
                                                         {formatPrice(row.price)}
                                                     </div>

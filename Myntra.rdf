@@ -858,7 +858,7 @@
         <xcommerce:appliesToProduct rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Sofa_001"/>
         <xcommerce:offered_by rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_001"/>
         <xcommerce:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.5</xcommerce:Discount>
-        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-31T23:59:59</xcommerce:Enddate>
+        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-03-31T23:59:59</xcommerce:Enddate>
         <xcommerce:Startdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-20T00:00:00</xcommerce:Startdate>
         <xcommerce:Platform>Myntra</xcommerce:Platform>
     </owl:NamedIndividual>
@@ -2816,7 +2816,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Deals&amp;Offers"/>
         <xcommerce:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40.6</xcommerce:Discount>
         <xcommerce:Startdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-23T00:00:00</xcommerce:Startdate>
-        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-21T00:00:00</xcommerce:Enddate>
+        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-21T00:00:00</xcommerce:Enddate>
         <xcommerce:appliesToProduct rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Mobile_001"/>
         <xcommerce:offered_by rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_001"/>
     </owl:NamedIndividual>
@@ -2833,7 +2833,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Deals&amp;Offers"/>
         <xcommerce:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">37.8</xcommerce:Discount>
         <xcommerce:Startdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-23T00:00:00</xcommerce:Startdate>
-        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-07T00:00:00</xcommerce:Enddate>
+        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-07T00:00:00</xcommerce:Enddate>
         <xcommerce:appliesToProduct rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Chair_002"/>
         <xcommerce:offered_by rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_002"/>
     </owl:NamedIndividual>
@@ -2850,7 +2850,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Deals&amp;Offers"/>
         <xcommerce:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.5</xcommerce:Discount>
         <xcommerce:Startdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-23T00:00:00</xcommerce:Startdate>
-        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-20T00:00:00</xcommerce:Enddate>
+        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-20T00:00:00</xcommerce:Enddate>
         <xcommerce:appliesToProduct rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Chair_003"/>
         <xcommerce:offered_by rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_003"/>
     </owl:NamedIndividual>
@@ -2867,7 +2867,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Deals&amp;Offers"/>
         <xcommerce:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27.6</xcommerce:Discount>
         <xcommerce:Startdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-24T00:00:00</xcommerce:Startdate>
-        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-18T00:00:00</xcommerce:Enddate>
+        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-18T00:00:00</xcommerce:Enddate>
         <xcommerce:appliesToProduct rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Chair_004"/>
         <xcommerce:offered_by rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_004"/>
     </owl:NamedIndividual>
@@ -2884,7 +2884,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Deals&amp;Offers"/>
         <xcommerce:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.1</xcommerce:Discount>
         <xcommerce:Startdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-20T00:00:00</xcommerce:Startdate>
-        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-30T00:00:00</xcommerce:Enddate>
+        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-30T00:00:00</xcommerce:Enddate>
         <xcommerce:appliesToProduct rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Laptop_005"/>
         <xcommerce:offered_by rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_005"/>
     </owl:NamedIndividual>
@@ -2901,7 +2901,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Deals&amp;Offers"/>
         <xcommerce:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">35.7</xcommerce:Discount>
         <xcommerce:Startdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-21T00:00:00</xcommerce:Startdate>
-        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-19T00:00:00</xcommerce:Enddate>
+        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-19T00:00:00</xcommerce:Enddate>
         <xcommerce:appliesToProduct rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Chair_006"/>
         <xcommerce:offered_by rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_006"/>
     </owl:NamedIndividual>
@@ -2918,7 +2918,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Deals&amp;Offers"/>
         <xcommerce:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36.3</xcommerce:Discount>
         <xcommerce:Startdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-25T00:00:00</xcommerce:Startdate>
-        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-09T00:00:00</xcommerce:Enddate>
+        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-09T00:00:00</xcommerce:Enddate>
         <xcommerce:appliesToProduct rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Mobile_007"/>
         <xcommerce:offered_by rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_007"/>
     </owl:NamedIndividual>
@@ -2935,7 +2935,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Deals&amp;Offers"/>
         <xcommerce:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.4</xcommerce:Discount>
         <xcommerce:Startdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-24T00:00:00</xcommerce:Startdate>
-        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-15T00:00:00</xcommerce:Enddate>
+        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-15T00:00:00</xcommerce:Enddate>
         <xcommerce:appliesToProduct rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Sofa_008"/>
         <xcommerce:offered_by rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_008"/>
     </owl:NamedIndividual>
@@ -2952,7 +2952,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Deals&amp;Offers"/>
         <xcommerce:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.8</xcommerce:Discount>
         <xcommerce:Startdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-23T00:00:00</xcommerce:Startdate>
-        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-30T00:00:00</xcommerce:Enddate>
+        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-03-30T00:00:00</xcommerce:Enddate>
         <xcommerce:appliesToProduct rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Chair_009"/>
         <xcommerce:offered_by rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_009"/>
     </owl:NamedIndividual>
@@ -2969,7 +2969,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Deals&amp;Offers"/>
         <xcommerce:Discount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">47.6</xcommerce:Discount>
         <xcommerce:Startdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-03-21T00:00:00</xcommerce:Startdate>
-        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-11T00:00:00</xcommerce:Enddate>
+        <xcommerce:Enddate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2027-04-11T00:00:00</xcommerce:Enddate>
         <xcommerce:appliesToProduct rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Mobile_010"/>
         <xcommerce:offered_by rdf:resource="http://www.semanticweb.org/athira/ontologies/2026/xcommerce#Seller_010"/>
     </owl:NamedIndividual>
